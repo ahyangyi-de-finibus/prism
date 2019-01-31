@@ -10,7 +10,7 @@ var minified = true;
 
 var dependencies = {};
 
-var treeURL = 'https://api.github.com/repos/PrismJS/prism/git/trees/gh-pages?recursive=1';
+var treeURL = 'https://api.github.com/repos/PrismJS/prism/git/trees/master?recursive=1';
 var treePromise = new Promise(function(resolve) {
 	$u.xhr({
 		url: treeURL,
@@ -138,6 +138,7 @@ for (var category in components) {
 
 		var info = all[id] = {
 			title: all[id].title || all[id],
+			aliasTitles: all[id].aliasTitles,
 			noCSS: all[id].noCSS || all.meta.noCSS,
 			noJS: all[id].noJS || all.meta.noJS,
 			enabled: checked,
@@ -174,6 +175,17 @@ for (var category in components) {
 
 			info.files.minified.paths.push(cssFile);
 			info.files.dev.paths.push(cssFile);
+		}
+
+		function getLanguageTitle(lang) {
+			if (!lang.aliasTitles)
+				return lang.title;
+
+			var titles = [lang.title];
+			for (var alias in lang.aliasTitles)
+				if (lang.aliasTitles.hasOwnProperty(alias))
+					titles.push(lang.aliasTitles[alias]);
+			return titles.join(" + ");
 		}
 
 		var label = $u.element.create('label', {
@@ -230,7 +242,7 @@ for (var category in components) {
 					properties: {
 						className: 'name'
 					},
-					contents: info.title
+					contents: getLanguageTitle(info)
 				},
 				' ',
 				all[id].owner? {
