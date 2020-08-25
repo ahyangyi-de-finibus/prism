@@ -1,22 +1,55 @@
-query
-fragment
-mutation
-fragment foo on Bar
-... on Foo
+directive,
+enum,
+extend,
+fragment,
+implements,
+input,
+interface,
+mutation,
+on,
+query,
+repeatable,
+scalar,
+schema,
+subscription,
+type,
+union,
 
 ----------------------------------------------------
 
 [
-	["keyword", "query"],
+	["keyword", "directive"],
+	["punctuation", ","],
+	["keyword", "enum"],
+	["punctuation", ","],
+	["keyword", "extend"],
+	["punctuation", ","],
 	["keyword", "fragment"],
+	["punctuation", ","],
+	["keyword", "implements"],
+	["punctuation", ","],
+	["keyword", "input"],
+	["punctuation", ","],
+	["keyword", "interface"],
+	["punctuation", ","],
 	["keyword", "mutation"],
-	["keyword", "fragment"],
-	" foo ",
+	["punctuation", ","],
 	["keyword", "on"],
-	" Bar\r\n",
-	["operator", "..."],
-	["keyword", "on"],
-	" Foo"
+	["punctuation", ","],
+	["keyword", "query"],
+	["punctuation", ","],
+	["keyword", "repeatable"],
+	["punctuation", ","],
+	["keyword", "scalar"],
+	["punctuation", ","],
+	["keyword", "schema"],
+	["punctuation", ","],
+	["keyword", "subscription"],
+	["punctuation", ","],
+	["keyword", "type"],
+	["punctuation", ","],
+	["keyword", "union"],
+	["punctuation", ","]
 ]
 
 ----------------------------------------------------
