@@ -7,23 +7,23 @@ import Json.Decode as Json exposing (Decoder)
 ----------------------------------------------------
 
 [
-	["import_statement", [
+	["import-statement", [
 		["keyword", "import"],
 		" Foo"
 	]],
-	["import_statement", [
+	["import-statement", [
 		["keyword", "import"],
 		" Foo_42.Bar ",
 		["keyword", "as"],
 		" Foobar"
 	]],
-	["import_statement", [
+	["import-statement", [
 		["keyword", "import"],
 		" Foo.Bar ",
 		["keyword", "as"],
 		" Foo.Baz"
 	]],
-	["import_statement", [
+	["import-statement", [
 		["keyword", "import"],
 		" List ",
 		["keyword", "exposing"]
@@ -31,7 +31,7 @@ import Json.Decode as Json exposing (Decoder)
 	["punctuation", "("],
 	["hvariable", "map"],
 	["punctuation", ")"],
-	["import_statement", [
+	["import-statement", [
 		["keyword", "import"],
 		" Json.Decode ",
 		["keyword", "as"],

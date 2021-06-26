@@ -77,6 +77,7 @@
 			"title": "JavaScript",
 			"require": "clike",
 			"modify": "markup",
+			"optional": "regex",
 			"alias": "js",
 			"option": "default"
 		},
@@ -115,6 +116,11 @@
 			"title": "Apache Configuration",
 			"owner": "GuiTeK"
 		},
+		"apex": {
+			"title": "Apex",
+			"require": ["clike", "sql"],
+			"owner": "RunDevelopment"
+		},
 		"apl": {
 			"title": "APL",
 			"owner": "ngn"
@@ -130,7 +136,7 @@
 		"arduino": {
 			"title": "Arduino",
 			"require": "cpp",
-			"owner": "eisbehr-"
+			"owner": "dkern"
 		},
 		"arff": {
 			"title": "ARFF",
@@ -182,6 +188,11 @@
 			},
 			"owner": "RunDevelopment"
 		},
+		"birb": {
+			"title": "Birb",
+			"require": "clike",
+			"owner": "Calamity210"
+		},
 		"bison": {
 			"title": "Bison",
 			"require": "c",
@@ -206,6 +217,14 @@
 		"bro": {
 			"title": "Bro",
 			"owner": "wayward710"
+		},
+		"bsl": {
+			"title": "BSL (1C:Enterprise)",
+			"alias": "oscript",
+			"aliasTitles": {
+				"oscript": "OneScript"
+			},
+			"owner": "Diversus23"
 		},
 		"c": {
 			"title": "C",
@@ -274,6 +293,10 @@
 			"title": "Dart",
 			"require": "clike",
 			"owner": "Golmote"
+		},
+		"dataweave": {
+			"title": "DataWeave",
+			"owner": "machaval"
 		},
 		"dax": {
 			"title": "DAX",
@@ -688,6 +711,7 @@
 		"markdown": {
 			"title": "Markdown",
 			"require": "markup",
+			"optional": "yaml",
 			"alias": "md",
 			"owner": "Golmote"
 		},
@@ -707,6 +731,11 @@
 		"mizar": {
 			"title": "Mizar",
 			"owner": "Golmote"
+		},
+		"mongodb": {
+			"title": "MongoDB",
+			"owner": "airs0urce",
+			"require": "javascript"
 		},
 		"monkey": {
 			"title": "Monkey",
@@ -731,6 +760,11 @@
 		"nand2tetris-hdl": {
 			"title": "Nand To Tetris HDL",
 			"owner": "stephanmax"
+		},
+		"naniscript": {
+			"title": "Naninovel Script",
+			"owner": "Elringus",
+			"alias": "nani"
 		},
 		"nasm": {
 			"title": "NASM",
@@ -817,7 +851,7 @@
 		},
 		"php": {
 			"title": "PHP",
-			"require": ["clike", "markup-templating"],
+			"require": "markup-templating",
 			"owner": "milesj"
 		},
 		"phpdoc": {
@@ -854,6 +888,10 @@
 		"prolog": {
 			"title": "Prolog",
 			"owner": "Golmote"
+		},
+		"promql": {
+			"title": "PromQL",
+			"owner": "arendjr"
 		},
 		"properties": {
 			"title": ".properties",
@@ -898,6 +936,12 @@
 			"require": "clike",
 			"alias": "pbfasm",
 			"owner": "HeX0R101"
+		},
+		"purescript": {
+			"title": "PureScript",
+			"require": "haskell",
+			"alias": "purs",
+			"owner": "sriharshachilakapati"
 		},
 		"python": {
 			"title": "Python",
@@ -949,14 +993,6 @@
 		},
 		"regex": {
 			"title": "Regex",
-			"modify": [
-				"actionscript",
-				"coffeescript",
-				"flow",
-				"javascript",
-				"typescript",
-				"vala"
-			],
 			"owner": "RunDevelopment"
 		},
 		"renpy": {
@@ -1019,6 +1055,7 @@
 		"shell-session": {
 			"title": "Shell session",
 			"require": "bash",
+			"alias": ["sh-session", "shellsession"],
 			"owner": "RunDevelopment"
 		},
 		"smali": {
@@ -1033,6 +1070,14 @@
 			"title": "Smarty",
 			"require": "markup-templating",
 			"owner": "Golmote"
+		},
+		"sml": {
+			"title": "SML",
+			"alias": "smlnj",
+			"aliasTitles": {
+				"smlnj": "SML/NJ"
+			},
+			"owner": "RunDevelopment"
 		},
 		"solidity": {
 			"title": "Solidity (Ethereum)",
@@ -1068,6 +1113,10 @@
 		"sql": {
 			"title": "SQL",
 			"owner": "multipetros"
+		},
+		"stan": {
+			"title": "Stan",
+			"owner": "RunDevelopment"
 		},
 		"iecst": {
 			"title": "Structured Text (IEC 61131-3)",
@@ -1141,6 +1190,14 @@
 			"alias": "ts",
 			"owner": "vkbansal"
 		},
+		"typoscript": {
+			"title": "TypoScript",
+			"alias": "tsconfig",
+			"aliasTitles": {
+				"tsconfig": "TSConfig"
+			},
+			"owner": "dkern"
+		},
 		"unrealscript": {
 			"title": "UnrealScript",
 			"alias": ["uscript", "uc"],
@@ -1149,6 +1206,7 @@
 		"vala": {
 			"title": "Vala",
 			"require": "clike",
+			"optional": "regex",
 			"owner": "TemplarVolk"
 		},
 		"vbnet": {

@@ -1,13 +1,13 @@
-'Foo
-'bar_42
+""
+"fo"
 
 ----------------------------------------------------
 
 [
-	["type_variable", "'Foo"],
-	["type_variable", "'bar_42"]
+	["string", "\"\""],
+	["string", "\"fo\""]
 ]
 
 ----------------------------------------------------
 
-Checks for type variables.
+Checks for strings and chars.

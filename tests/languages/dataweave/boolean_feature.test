@@ -1,13 +1,12 @@
-#
-# foobar
+true
+false
 
 ----------------------------------------------------
 
 [
-	["shell-comment", "#"],
-	["shell-comment", "# foobar"]
+	["boolean", "true"],
+	["boolean", "false"]
 ]
 
 ----------------------------------------------------
-
-Checks for shell-like comments.
+Check for boolean
