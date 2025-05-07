@@ -5,6 +5,7 @@ hide-*.js
 .DS_Store
 CNAME
 .github/
+benchmark/
 assets/
 docs/
 examples/
@@ -19,3 +20,8 @@ gulpfile.js
 .editorconfig
 .gitattributes
 .travis.yml
+.eslintrc.js
+.eslintcache
+.jsdoc.json
+MAINTAINERS.md
+SECURITY.md

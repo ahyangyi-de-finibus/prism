@@ -1,12 +1,13 @@
-"use strict";
+'use strict';
 
 const { src, dest, series, parallel, watch } = require('gulp');
 
 const rename = require('gulp-rename');
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 const header = require('gulp-header');
 const concat = require('gulp-concat');
 const replace = require('gulp-replace');
+const cleanCSS = require('gulp-clean-css');
 const webfont = require('webfont').default;
 const pump = require('pump');
 const util = require('util');
@@ -34,7 +35,7 @@ function inlineRegexSource() {
 		/\/((?:[^\n\r[\\\/]|\\.|\[(?:[^\n\r\\\]]|\\.)*\])+)\/\s*\.\s*source\b/g,
 		(m, source) => {
 			// escape backslashes
-			source = source.replace(/\\(.)|\[(\\s\\S|\\S\\s)\]/g, function (m, g1, g2) {
+			source = source.replace(/\\(.)|\[(?:\\s\\S|\\S\\s)\]/g, function (m, g1) {
 				if (g1) {
 					// characters like /\n/ can just be kept as "\n" instead of being escaped to "\\n"
 					if (/[nrt0/]/.test(g1)) {
@@ -45,7 +46,7 @@ function inlineRegexSource() {
 					}
 					return '\\\\' + g1;
 				} else {
-					return "[^]";
+					return '[^]';
 				}
 			});
 			// escape single quotes
@@ -59,7 +60,15 @@ function inlineRegexSource() {
 function minifyJS() {
 	return [
 		inlineRegexSource(),
-		uglify()
+		terser({
+			ecma: 5,
+			compress: {
+				passes: 3,
+			},
+			output: {
+				comments: false
+			}
+		})
 	];
 }
 
@@ -69,6 +78,12 @@ function minifyComponents(cb) {
 }
 function minifyPlugins(cb) {
 	pump([src(paths.plugins), ...minifyJS(), rename({ suffix: '.min' }), dest('plugins')], cb);
+}
+function minifyPluginCSS(cb) {
+	pump([src(paths.pluginsCSS), cleanCSS(), rename({ suffix: '.min' }), dest('plugins')], cb);
+}
+function minifyThemes(cb) {
+	pump([src(paths.themes), cleanCSS(), rename({ suffix: '.min' }), dest('themes')], cb);
 }
 function build(cb) {
 	pump([src(paths.main), header(`
@@ -162,7 +177,11 @@ async function languagePlugins() {
 
 	/** @type {Record<string, string>} */
 	const nonNullLanguageMap = {
-		'none': 'Plain text'
+		'none': 'Plain text',
+		'plain': 'Plain text',
+		'plaintext': 'Plain text',
+		'text': 'Plain text',
+		'txt': 'Plain text'
 	};
 	for (const id in languagesMap) {
 		const title = languagesMap[id];
@@ -274,12 +293,11 @@ async function treeviewIconFont() {
 }
 
 const components = minifyComponents;
-const plugins = series(languagePlugins, treeviewIconFont, minifyPlugins);
-
+const plugins = series(languagePlugins, treeviewIconFont, minifyPlugins, minifyPluginCSS);
 
 module.exports = {
 	watch: watchComponentsAndPlugins,
-	default: series(parallel(components, plugins, componentsJsonToJs, build), docs),
+	default: series(parallel(components, plugins, minifyThemes, componentsJsonToJs, build), docs),
 	linkify,
 	changes
 };
