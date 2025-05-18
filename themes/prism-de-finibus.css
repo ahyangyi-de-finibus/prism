@@ -110,11 +110,14 @@ pre[class*="language-"] {
 .token.url,
 .token.variable,
 .token.attr-value,
-.token.class-name {
+.token.class-name,
+.token.decorator {
 	color: #285a84; /* Primary 900 */
 }
 
-.token.class-name {
+.token.url,
+.token.class-name,
+.token.decorator {
     text-decoration: underline;
 }
 
