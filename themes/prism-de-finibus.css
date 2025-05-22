@@ -51,7 +51,7 @@ code[class*="language"] {
 /* Margin bottom to accommodate shadow */
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background-color: #f0f0f0;
+	background-color: light-dark(#f0f0f3, #191c1e);
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -62,7 +62,7 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"] {
 	position: relative;
 	padding: .1em;
-	border: 1px solid #e9e9e9;
+	border: 1px solid light-dark(#e2e2e5, #242628);
 	display: inline;
 	white-space: normal;
 }
@@ -72,12 +72,12 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #00000080;
+	color: light-dark(#00000080, #ffffff80);
     font-style: italic;
 }
 
 .token.punctuation {
-	color: #000000c0;
+	color: light-dark(#000000c0, #ffffffc0);
 }
 
 .token.property,
@@ -88,7 +88,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #c91070;
+	color: light-dark(#b90063, #ff4896); /* H0/40, H0/40 */
 }
 
 .token.selector,
@@ -96,12 +96,12 @@ pre[class*="language-"] {
 .token.string,
 .token.char,
 .token.inserted {
-	color: #0a9c2f;
+	color: light-dark(#006e17, #00a829); /* H145/40, H145/40 */
 }
 
 .token.function,
 .token.builtin {
-	color: #285a84; /* Primary 900 */
+	color: light-dark(#006590, #4898c9); /* P40, P60 */
     font-style: italic;
 }
 
@@ -112,7 +112,7 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.class-name,
 .token.decorator {
-	color: #285a84; /* Primary 900 */
+	color: light-dark(#006590, #4898c9); /* P40, P60 */
 }
 
 .token.url,
@@ -123,18 +123,18 @@ pre[class*="language-"] {
 
 .token.atrule,
 .token.keyword {
-    color: #00a3fe; /* Secondary 500 */
+	color: #009cca; /* S60 */
     font-weight: 700;
 }
 
 .token.regex,
 .token.important {
-	color: #c07000;
+	color: light-dark(#ad6600, #d17d00); /* H65/50, H65/60 */
 }
 
 .language-css .token.string,
 .style .token.string {
-	color: #a67f59;
+	color: light-dark(#966f49, #b28960); /* H65-24/50, H65-24/60 */
 }
 
 .token.important {
@@ -169,7 +169,7 @@ pre[class*="language-"] {
 .token.tab:not(:empty):before,
 .token.cr:before,
 .token.lf:before {
-	color: #e0d7d1;
+	color: light-dark(#e0d7d1, #404244); /* Untested */
 }
 
 /* Plugin styles: Line Numbers */
