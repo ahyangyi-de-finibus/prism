@@ -7,7 +7,7 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: black;
+	color: light-dark(black, white);
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	text-align: left;
@@ -36,9 +36,11 @@ pre[class*="language-"] {
 }
 pre[class*="language-"]>code {
 	position: relative;
-	border-left: 4px solid #378aba;
-	background-color: #f0f0f0;
+    border-top: 3px solid #378aba;
+    border-bottom: 4px solid #378aba;
+    background-color: light-dark(#f0f0f3, #191c1e) !important;
 }
+
 
 code[class*="language"] {
 	max-height: inherit;
@@ -197,4 +199,15 @@ pre[data-line] code {
 }
 pre .line-highlight {
 	margin-top: 0;
+}
+
+/* Plugin styles: Buttons */
+div.code-toolbar>.toolbar>.toolbar-item>a,
+div.code-toolbar>.toolbar>.toolbar-item>button,
+div.code-toolbar>.toolbar>.toolbar-item>span {
+    border-radius: 0 !important;
+    line-height: normal;
+    margin-left: 0.2em;
+    vertical-align: top;
+    display: inline-block;
 }
