@@ -7,9 +7,16 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-    color: light-dark(black, white);
+    color: light-dark(#242628, #c5c6c9);
+    @media (prefers-contrast: less) {
+        color: light-dark(#515355, #8f9193);
+    }
+    @media (prefers-contrast: more) {
+        color: light-dark(#000000, #ffffff);
+    }
     background: none;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-feature-settings: "liga";
     text-align: left;
     white-space: pre;
     word-spacing: normal;
@@ -39,6 +46,8 @@ pre[class*="language-"] {
 }
 pre[class*="language-"]>code {
     position: relative;
+    border-left: 1px solid light-dark(#e2e2e5, #242628);
+    border-right: 1px solid light-dark(#e2e2e5, #242628);
 }
 code[class*="language"] {
     max-height: inherit;
@@ -156,20 +165,11 @@ pre[class*="language-"] {
     opacity: .7;
 }
 
-@media screen and (max-width: 767px) {
-    pre[class*="language-"]:before,
-    pre[class*="language-"]:after {
-        bottom: 14px;
-        box-shadow: none;
-    }
-
-}
-
 /* Plugin styles */
 .token.tab:not(:empty):before,
 .token.cr:before,
 .token.lf:before {
-    color: light-dark(#e0d7d1, #404244); /* Untested */
+    color: light-dark(#c5c6c9, #2e3133); /* N80, N20 */
 }
 
 /* Plugin styles: Line Numbers */
@@ -183,6 +183,7 @@ pre[class*="language-"].line-numbers.line-numbers code {
 
 pre[class*="language-"].line-numbers.line-numbers .line-numbers-rows {
     left: 0;
+    border-right-color: light-dark(#aaabae, #454749); /* N70, N30 */
 }
 
 /* Plugin styles: Line Highlight */
