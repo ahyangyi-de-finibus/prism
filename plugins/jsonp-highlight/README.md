@@ -89,7 +89,7 @@ There's a bit of a catch with gists, as they can actually contain multiple files
 
 The plugin’s JS code (from GitHub):
 
-<pre class="lang-javascript" data-jsonp="https://api.github.com/repos/PrismJS/plugins/contents/jsonp-highlight/prism-jsonp-highlight.js"></pre>
+<pre class="lang-javascript" data-jsonp="https://api.github.com/repos/PrismJS/prism/contents/plugins/jsonp-highlight/prism-jsonp-highlight.js"></pre>
 
 GitHub Gist (gist contains a single file, automatically selected):
 
